@@ -1,18 +1,23 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.fulln.fplugins</id>
-    <name>FPlugins Template</name>
-    <vendor>fulln</vendor>
+    <!-- 插件唯一id，不能和其他插件项目重复，所以推荐使用com.xxx.xxx的格式 -->
+   <id>com.github.fulln.fplugins</id>
+    <!-- 插件名称   -->
+   <name>FPlugins</name>
+<!-- 插件版本   -->
+    <version>0.0.1</version>
 
-    <depends>com.intellij.modules.platform</depends>
+   <vendor>fulln</vendor>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+   <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.fulln.fplugins.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+   <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <applicationListeners>
-        <listener class="com.github.fulln.fplugins.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+   <extensions defaultExtensionNs="com.intellij">
+       <toolWindow factoryClass="com.github.fulln.fplugins.toolWindow.FPluginsToolWindowFactory" id="FPlugins"/>
+   </extensions>
+
+   <applicationListeners>
+       <listener class="com.github.fulln.fplugins.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+   </applicationListeners>
 </idea-plugin>

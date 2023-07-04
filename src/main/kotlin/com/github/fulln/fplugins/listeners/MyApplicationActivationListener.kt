@@ -7,6 +7,8 @@ import com.intellij.openapi.wm.IdeFrame
 internal class MyApplicationActivationListener : ApplicationActivationListener {
 
     override fun applicationActivated(ideFrame: IdeFrame) {
-        thisLogger().warn("Don't forget to remove all non-needed sample code files with their corresponding registration entries in `plugin.xml`.")
+        val project = ideFrame.project
+        // get  Name from project and print log
+        thisLogger().warn("project name is ${project?.name}")
     }
 }
